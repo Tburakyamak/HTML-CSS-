@@ -1,0 +1,236 @@
+/*
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+*/
+/* 
+Sayfadaki renklerin oranına göre ana renk ve gri tonu belirleyeceğiz
+open colors ı kullanarak sayfadan istediğimiz ana renk kodunu ve gri tonunu alalım 
+ana renk #087f5b
+gri tonu #343a40
+
+
+
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ------------------------ */
+/* GENERAL STYLES */
+/* ------------------------ */
+body {
+  /* Buraya tirnak içerisinde inter ailesini ekleyelim ve yukarıda typescale sayfasından aldığımız şablonu kullanalım */
+  font-family: "inter", sans-serif;
+  color: #343a40;
+  /* sayfanın en altına çizgi koyalım  */
+  border-bottom: 8px solid #087f5b;
+}
+.btn:link,
+.btn:visited {
+  /* düğmelerin hepsinde olan sınıfı seçip linklerin rengini değiştirelim  */
+  background-color: #087f5b;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  display: inline-block;
+  font-weight: 500;
+  /* düğmeyi yuvarlağa yakın yapmak için border radius değeri ya %50 ya da büyük değer olacak  */
+  border-radius: 100px;
+}
+.btn:hover,
+.btn:active {
+  /* daha açık ton olan #0ca678 ı kullanalım */
+  background-color: #0ca678;
+  /* cooler sayfasından contrast checker ı kullanalım  */
+}
+
+/* iki düğme grubunu farklı şekillendirelim  */
+.btn--big {
+  padding: 16px 32px;
+  font-size: 18px;
+}
+.btn--small {
+  font-size: 12px;
+  padding: 8px 16px;
+}
+.yorumlar {
+  background-color: #087f5b;
+  color: #fff;
+  padding: 24px;
+}
+.koli {
+  width: 960px;
+  margin: 0 auto;
+}
+
+header,
+section {
+  margin-bottom: 48px;
+}
+
+h2 {
+  margin-bottom: 48px;
+  /* şimdi de h2 seviyesi başlıkları ayarlayalım ancak bunlar h1 den küçük olmalı / 24 / 30 / 36 / dan birini kullanalım */
+  font-size: 36px;
+  /* letter spacing i küçültelim  */
+  letter-spacing: -0.5px;
+}
+
+.grid-3-sütun {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 80px;
+}
+
+/* ------------------------ */
+/* COMPONENT STYLES */
+/* ------------------------ */
+
+/* HEADER */
+header {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 80px;
+  margin-top: 48px;
+}
+
+.başlık-bölümü {
+  align-self: center;
+}
+
+h1 {
+  /* / 44 / 52 / 62 / fontlarından birini kullanıpp deneyelim  */
+  margin-bottom: 24px;
+  font-size: 44px;
+  /* font size büyüyünce satır arası boşlukları 1.5 altına indirmemiz gerekir  */
+  line-height: 1.1;
+  /* yazı fontu büyüyünce letter spacing özelliğini küçültmek faydalıdır */
+  letter-spacing: -1px;
+  /* gölgelendirme için yazılarda text shadow kullanılır  */
+  /* text shadow da 3 özellik var ve 0.07 alpha değerini 0.1 yapalım */
+  text-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+}
+
+.başlık-metni {
+  margin-bottom: 24px;
+  /* başlık bölümü olduğu için biraz büyütelim yukarıdaki listeye bakarak / 18 / 20 / den birini kullanalım*/
+  font-size: 18px;
+  /* aynı şekilde line heigth özelliğini de 1.5 -2 arası yapalım  */
+  line-height: 1.7;
+}
+
+img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+/* FEATURES */
+/* iconu şekillendirmek için  */
+.özellik-icon {
+  stroke: #087f5b;
+  /* fill: red */
+  width: 32px;
+  height: 32px;
+}
+
+.özellik-başlık {
+  margin-bottom: 16px;
+  /* burada / 18 / 20 / uygulayalım  */
+  font-size: 20px;
+}
+
+.özellik-metni {
+  /* burada / 18 / 20 / uygulayalım  */
+  font-size: 18px;
+  /* line heigth ı arttıralım  */
+  line-height: 1.7;
+}
+
+/* TESTIMONIAL */
+.yorumlar {
+  border-radius: 12px;
+}
+
+.yorumlar-kutusu {
+  grid-column: 2 / -1;
+  align-self: center;
+}
+
+.yorumlar-kutusu h2 {
+  margin-bottom: 24px;
+  /*  20 / 24 / 30 / */
+  font-size: 24px;
+}
+
+.yorumlar-metni {
+  font-style: italic;
+  margin-bottom: 24px;
+  /* burada / 18 / 20 / uygulayalım  */
+  font-size: 18px;
+  /* line heigth ı arttıralım  */
+  line-height: 1.7;
+}
+
+/* CHAIRS */
+.sandalye {
+  padding: 24px;
+  border-radius: 12px;
+  /* 1. değer: ışık yukarıdan geliyormuş olması için bu değerin 0 olması lazım sağda ve solda gölge geniişliğini gösterir
+  2. değer: Bu değer dikeydeki gölge genişliği
+  3. değer: bu değer blur yani pusluluk değeri
+  4. değer: bu gölge çapı 
+  5. değer: renk RGBA Değerinde alpha değeri 0.07 civarı iyi olur  */
+  box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.07);
+  /* aynı değerleri kopyalayarak h1'e de gölgelendirme yapalım */
+}
+.sandalye img {
+  /* kartların içindeki resimlerin alt köşelerini düz yapmak için  */
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+h3 {
+  margin-bottom: 24px;
+}
+
+.sandalye-özellik {
+  list-style: none;
+  margin-bottom: 24px;
+}
+
+.sandalye-özellik li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.sandalye-özellik li:last-child {
+  margin-bottom: 0;
+}
+
+.sandalye-icon {
+  stroke: #087f5b;
+  width: 24px;
+  height: 24px;
+}
+
+.sandalye-fiyat {
+  display: flex;
+  justify-content: space-between;
+  /* burada / 18 / 20 / uygulayalım  */
+  font-size: 20px;
+}
+
+footer {
+  margin-bottom: 48px;
+  /* footer bölümünün daha küçük olması lazım  12 / 14 / 16 / */
+  font-size: 14px;
+  /* rengini diğer metinden daha açık yapmak için open colors dan daha açık renk alalım #495057 */
+  color: #495057;
+}
